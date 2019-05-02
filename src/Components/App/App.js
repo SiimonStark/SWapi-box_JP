@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from '../Header/Header';
-
+import DisplayField from '../DisplayField/DisplayField';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      isLoading: true,
+      isTab: 'Crawl',
       currentFilm: {},
       allCards: {
         people: [],
@@ -28,7 +29,7 @@ class App extends Component {
       fetch(urlCurrentFilm)
       .then(response => response.json())
       .then(results => this.grabCurrFilm(results))
-      .then(singleFilm => this.setState({currentFilm: singleFilm}))
+      .then(singleFilm => this.setState({currentFilm: singleFilm, isLoading: false}))
 
     };
 
@@ -76,7 +77,15 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <div className="backgroundImg">
+          <main>
+            <Header />
+            <DisplayField
+              isLoading={this.state.isLoading}
+              isTab={this.state.isTab}
+              currentFilm={this.state.currentFilm} />
+          </main>
+        </div>
       </div>
     );
   }
