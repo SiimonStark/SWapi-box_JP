@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should match snapshot 1`] = `
+<div
+  className="Loading"
+>
+  <h3>
+    Patience You Must
+  </h3>
+  <img
+    alt="loader"
+    src="Ripple-Loader.gif"
+  />
+</div>
+`;

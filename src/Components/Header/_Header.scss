@@ -1,0 +1,14 @@
+header {
+  border: lime 4px dotted;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(./images/moonDark.gif);
+  background-size: 100% 500%;
+  background-position: center;
+
+  h1 {
+    margin: 10px;
+  }
+}
