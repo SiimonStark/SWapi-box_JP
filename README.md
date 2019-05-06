@@ -36,7 +36,10 @@ Created by:
  - Testing Fetch Calls
 
 ## Screenshots
+![image](https://user-images.githubusercontent.com/23123990/57222717-d76a9080-6fc0-11e9-81c4-bc1058d5aaf8.png)
 
+## Gif Demo
+![image](https://media.giphy.com/media/eNd3m2jByR6zBdSJKz/giphy.gif)
 
 ## Credits:
  Turing truly is a great environment to start this journey into our tech careers! The ecosystem of other developers all struggling and learning together builds such a strong emphasis on helping others and yourself to achieve success!!!
