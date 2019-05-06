@@ -36,6 +36,11 @@ Created by:
  - Testing Fetch Calls
 
 ## Screenshots
+
+##Wireframe
+<img width="805" alt="image" src="https://user-images.githubusercontent.com/23123990/57234467-e6137080-6fdd-11e9-80f2-5cf20adb1349.png">
+
+## Card Page
 ![image](https://user-images.githubusercontent.com/23123990/57222717-d76a9080-6fc0-11e9-81c4-bc1058d5aaf8.png)
 
 ## Gif Demo
