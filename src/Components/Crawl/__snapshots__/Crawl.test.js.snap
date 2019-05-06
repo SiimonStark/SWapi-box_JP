@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Crawl should match snapshot 1`] = `
+<div
+  className="Crawl"
+>
+  <div
+    className="fade"
+  />
+  <section
+    className="Crawl--container"
+  >
+    <article
+      className="Crawl--content"
+    >
+      <p />
+      <h3>
+        Episode IV - A New Hope
+         (
+        1977
+        )
+      </h3>
+    </article>
+  </section>
+</div>
+`;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match snapshot 1`] = `
+<Nav
+  updateTab={[MockFunction]}
+>
+  <nav>
+    <Button
+      name="People"
+      updateTab={[MockFunction]}
+    >
+      <button
+        id="People"
+        onClick={[MockFunction]}
+      >
+        People
+      </button>
+    </Button>
+    <Button
+      name="Planets"
+      updateTab={[MockFunction]}
+    >
+      <button
+        id="Planets"
+        onClick={[MockFunction]}
+      >
+        Planets
+      </button>
+    </Button>
+    <Button
+      name="Vehicles"
+      updateTab={[MockFunction]}
+    >
+      <button
+        id="Vehicles"
+        onClick={[MockFunction]}
+      >
+        Vehicles
+      </button>
+    </Button>
+    <Button
+      name="Favorites"
+      updateTab={[MockFunction]}
+    >
+      <button
+        id="Favorites"
+        onClick={[MockFunction]}
+      >
+        Favorites
+      </button>
+    </Button>
+  </nav>
+</Nav>
+`;

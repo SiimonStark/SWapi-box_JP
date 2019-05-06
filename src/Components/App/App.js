@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findRandomFilm, findPeople } from '../../helper_Fetch';
 import Header from '../Header/Header';
 import DisplayField from '../DisplayField/DisplayField';
 
@@ -20,57 +21,27 @@ class App extends Component {
 
   componentDidMount() {
     const url = 'https://swapi.co/api/';
-    let urlCurrentFilm = `${url}films`;
-    let urlPeople = `${url}people`;
-    let urlPlanets = '';
-    let urlVehicles = '';
+    let currState = this.state;
 
-    let findCurrentFilm = (urlCurrentFilm) => {
-      fetch(urlCurrentFilm)
-      .then(response => response.json())
-      .then(results => this.grabCurrFilm(results))
-      .then(singleFilm => this.setState({currentFilm: singleFilm, isLoading: false}))
-
-    };
-
-    let findPeople = (urlPeople) => {
-      // let key ='allCards.people' 
-      fetch(urlPeople)
-        .then(response => response.json())
-        .then(results => this.grabPeople(results))
-        .then(setOfPeople => console.log('setOfPpl', setOfPeople))
-    }
+    findRandomFilm(`${url}films`)
+      .then(singleFilm => this.setState({ currentFilm: singleFilm, isLoading: false }));
     
-    window.setTimeout(findCurrentFilm(urlCurrentFilm), 1);
-    window.setTimeout(findPeople(urlPeople), 1);
-  }
-
-  grabCurrFilm = (results) => {
-    let randomIndex = Math.floor(Math.random()*(7-0) + 0)
-    let film =  results.results[randomIndex];
-    return { 
-      title: film.title, 
-      circa: film.release_date, 
-      opener: film.opening_crawl}
-  }
-
-  grabPeople = (results) => {
-// ** console.log('grabPeople', results.results)
-    // let people = [this.state.allCards.people];
-    let peopleArr = results.results.map((people) => {
-// ** console.log(people)
-      return {
-        name: people.name,
-// Todo: homeworld: people.homeworld,
-// Todo: species: people.species,
-// Todo: population: people.Population,
-        favorite: false
+    let result;
+    // findPeople(url, currState);
+      let func = ()=>{
+        result = findPeople(url, currState)
+          .then(result => this.setState({result}))
+        console.log('result', result)
       }
-    })
-// ** console.log('People: ', peopleArr);
-    return peopleArr;
+
+      func()
+    
   }
 
+  updateTab = (e) => {
+    let tabName = e.target.id;
+    this.setState({isTab: tabName})
+  }
 
   render() {
     console.log(this.state)
@@ -79,11 +50,12 @@ class App extends Component {
       <div className="App">
         <div className="backgroundImg">
           <main>
-            <Header />
+            <Header updateTab={this.updateTab} />
             <DisplayField
               isLoading={this.state.isLoading}
               isTab={this.state.isTab}
-              currentFilm={this.state.currentFilm} />
+              currentFilm={this.state.currentFilm}
+              person= {this.state.allCards.people} />
           </main>
         </div>
       </div>

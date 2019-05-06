@@ -1,19 +1,17 @@
 html {
-  // height: 100vh;
-  // padding: 0;
-  display: grid;
-  align-content: center;
-  justify-content: center;
   background-color: black;
 }
 
 .App {
+  position: relative;
+  border: skyblue solid 5px;
   height: 100vh;
   width: 100vw;
   top: 0;
 }
 
 .backgroundImg {
+  border: solid yellow 3px;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -31,23 +29,29 @@ html {
   position: absolute;
   background-image: url('https://wallpapertag.com/wallpaper/full/e/e/5/155073-amazing-star-wars-space-background-1980x1080-tablet.jpg');
   background-size: cover;
-  filter: grayscale(70%);
+  filter: grayscale(100%);
 }
 
 main {
   position: relative;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "Header" "DisplayField";
+  grid-template-rows: 20% 80%; 
+  border: magenta dotted 3px;
   font: bold 42px sans-serif;
 }
-// .backgroundImg::before {
-//   content: '';
-//   position: absolute;
-//   top: 0; left: 0;
-//   filter: grayscale(100%);
-//   background: hsla(0,0,0,0.5) ;
-//   // url('https://wallpapertag.com/wallpaper/full/e/e/5/155073-amazing-star-wars-space-background-1980x1080-tablet.jpg');
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   height: 100vh;
-//   width: 100vw;
-// }
+
+header {
+  grid-area: Header;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+}
+.DisplayField {
+  grid-area: DisplayField;
+  box-sizing: border-box;
+  height: 100%;
+}

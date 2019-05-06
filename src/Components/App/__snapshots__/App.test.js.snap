@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="backgroundImg"
+  >
+    <main>
+      <Header
+        updateTab={[Function]}
+      />
+      <DisplayField
+        currentFilm={Object {}}
+        isLoading={true}
+        isTab="Crawl"
+        person={Array []}
+      />
+    </main>
+  </div>
+</div>
+`;
