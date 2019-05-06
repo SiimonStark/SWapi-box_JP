@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { findRandomFilm, findPeople } from '../../helper_Fetch';
+import { findRandomFilm, searchCharacter } from '../../helper_Fetch';
 import Header from '../Header/Header';
 import DisplayField from '../DisplayField/DisplayField';
 
@@ -10,32 +10,25 @@ class App extends Component {
       isLoading: true,
       isTab: 'Crawl',
       currentFilm: {},
-      allCards: {
-        people: [],
-        planets: [],
-        vehicles: [],
-        favorites: []
-      }
+      people: [],
+      planets: [],
+      vehicles: [],
+      favorites: []
     }
   }
 
   componentDidMount() {
     const url = 'https://swapi.co/api/';
-    let currState = this.state;
 
     findRandomFilm(`${url}films`)
-      .then(singleFilm => this.setState({ currentFilm: singleFilm, isLoading: false }));
+      .then(singleFilm =>
+        this.setState({ currentFilm: singleFilm, isLoading: false })
+      )
+      .catch(error => console.log(error));
     
-    let result;
-    // findPeople(url, currState);
-      let func = ()=>{
-        result = findPeople(url, currState)
-          .then(result => this.setState({result}))
-        console.log('result', result)
-      }
-
-      func()
-    
+    searchCharacter(url)
+      .then(people => this.setState({ people }))
+      .catch(error => console.log(error));
   }
 
   updateTab = (e) => {
@@ -55,7 +48,7 @@ class App extends Component {
               isLoading={this.state.isLoading}
               isTab={this.state.isTab}
               currentFilm={this.state.currentFilm}
-              person= {this.state.allCards.people} />
+              people= {this.state.people} />
           </main>
         </div>
       </div>

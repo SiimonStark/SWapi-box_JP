@@ -2,16 +2,27 @@
 
 exports[`Card should match snapshot 1`] = `
 <section
-  className="card"
+  className="Card"
 >
-  <div
-    className="fade"
-  />
-  <h4>
-    props.person
-  </h4>
+  <h4 />
   <p>
-    content
+    Species: 
   </p>
+  <p>
+    Homeworld: 
+  </p>
+  <p
+    className="home-pop"
+  >
+    Homeworld Population:
+  </p>
+  <p />
+  <button
+    className="fave-undefined"
+  >
+    <i
+      class="fas fa-star"
+    />
+  </button>
 </section>
 `;

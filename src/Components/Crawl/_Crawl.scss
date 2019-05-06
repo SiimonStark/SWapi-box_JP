@@ -2,15 +2,7 @@
   position: relative;
   height: 100%;
   overflow: hidden;
-}
-
-.fade {
-  position: absolute;
-  width: 100%;
-  min-height: 60vh;
-  top: -25px;
-  background-image: linear-gradient(0deg, transparent, black 90%);
-  z-index: 1;
+  z-index: 3;
 }
 
 .Crawl--container {
@@ -18,7 +10,8 @@
   justify-content: center;
   position: absolute;
   height: 100%;
-  font-size: 300%;
+  width: 100%;
+  font-size: 250%;
   font-weight: 600;
   letter-spacing: 6px;
   line-height: 150%;
@@ -29,7 +22,7 @@
 .Crawl--content {
   position: relative;
   top: 999px;
-  transform-origin: 20% 100%;
+  transform-origin: 2% 100%;
   animation: crawl 20s linear;
   height: 2000px;
 }

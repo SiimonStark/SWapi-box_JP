@@ -61,15 +61,25 @@ exports[`DisplayField should match snapshot if Loading 1`] = `
       <div
         className="Loading"
       >
-        <h3>
-          Patience You Must
-        </h3>
-        <img
-          alt="loader"
-          src="Ripple-Loader.gif"
+        <div
+          className="fade"
         />
+        <article
+          className="loader"
+        >
+          <h3>
+            Patience You Must
+          </h3>
+          <img
+            alt="loader"
+            src="Ripple-Loader.gif"
+          />
+        </article>
       </div>
     </Loading>
+    <div
+      className="fade"
+    />
   </section>
 </DisplayField>
 `;
@@ -92,6 +102,9 @@ exports[`DisplayField should match snapshot if Not Loading 1`] = `
   <section
     className="DisplayField"
   >
+    <div
+      className="fade"
+    />
     <Crawl
       film={
         Object {
@@ -116,10 +129,11 @@ exports[`DisplayField should match snapshot if Not Loading 1`] = `
             className="Crawl--content"
           >
             <p />
-            <h3>
-               (
+            <h4>
+              (
               )
-            </h3>
+            </h4>
+            <h3 />
           </article>
         </section>
       </div>

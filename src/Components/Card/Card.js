@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = (props) => {
+const Card = ({person}) => {
+  let {name, species, homeworld, population, favorite} = person;
   return (
-    <section className="Card" >
-      <div className="fade"></div>
-      <article className="card__content">
-        <h4>props.person</h4>
-        <p>content</p>
-      </article>
+    <section className="Card">
+      <h4>{name}</h4>
+      <p>Species: {species}</p>
+      <p>Homeworld: {homeworld}</p>
+      <p className="home-pop">Homeworld Population:</p>
+      <p>{population}</p>
+      <button className={`fave-${favorite}`}>
+        <i class="fas fa-star" />
+      </button>
     </section>
-  )
+  );
 }
 
 Card.propTypes ={
-  person: PropTypes.string.isRequired
+  person: PropTypes.object.isRequired
 }
 
 export default Card;

@@ -15,7 +15,7 @@ exports[`App should match snapshot 1`] = `
         currentFilm={Object {}}
         isLoading={true}
         isTab="Crawl"
-        person={Array []}
+        people={Array []}
       />
     </main>
   </div>
