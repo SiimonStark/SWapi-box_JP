@@ -6,11 +6,19 @@ import PropTypes from 'prop-types';
 
 
 
-let DisplayField = ({isLoading, isTab, currentFilm, person}) => {
+let DisplayField = ({isLoading, isTab, currentFilm, people}) => {
   let determineTab = () => {
     switch (isTab) {
       case 'Crawl': return (<Crawl film={currentFilm} />);
-      case 'People': return (<Card person={'personName'} />)
+      case 'People': 
+      return (
+        <section className="cardContainer">
+          {people.map(personInfo => {
+            return <Card person={personInfo} key={personInfo.id} />;
+          })}
+        </section>
+      );
+      
       default: console.log('nothing');
     }
   }
@@ -28,16 +36,17 @@ let DisplayField = ({isLoading, isTab, currentFilm, person}) => {
   return (
     <section className="DisplayField">
       {loading}
+      <div className="fade" />
       {display}
     </section>
-  )
+  );
 }
 
 DisplayField.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   isTab: PropTypes.string.isRequired,
   currentFilm: PropTypes.object.isRequired,
-  person: PropTypes.array
+  people: PropTypes.array
 }
 
 export default DisplayField;

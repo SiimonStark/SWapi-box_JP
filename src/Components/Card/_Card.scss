@@ -1,0 +1,44 @@
+.Card {
+  display: inline-block;
+  width: 200px;
+  min-height: 320px;
+  margin: 5% min(5%);
+  padding: 45px 20px 20px 20px;
+  position: relative;
+  z-index: 3;
+  border: $OGYellow 5px ridge;
+  border-radius: 20px;
+  background: linear-gradient(340deg, slategray 55%, silver 85%);
+  text-shadow: black 1px 1px 1px;
+
+
+  h4 {
+    font-size: 32px;
+    margin: 0 5px 20px 5px;
+    text-decoration-line: underline;
+    height: 100px;
+  }
+  p {
+    margin: 5px;
+    font-size: 22px;
+    
+  }
+  .home-pop {
+    font-size: 19px;
+  }
+  button {
+    background-color: rgba(0,0,0,.01);
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.fave-false {
+  color: black;
+}
+.fave-true {
+  color: $OGYellow;
+  text-shadow: black 2px 2px 1px;
+}

@@ -14,11 +14,13 @@ exports[`Crawl should match snapshot 1`] = `
       className="Crawl--content"
     >
       <p />
-      <h3>
-        Episode IV - A New Hope
-         (
+      <h4>
+        (
         1977
         )
+      </h4>
+      <h3>
+        Episode IV - A New Hope
       </h3>
     </article>
   </section>

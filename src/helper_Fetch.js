@@ -1,7 +1,3 @@
-import { promised } from "q";
-
-// import React from 'react';
-
 export const findRandomFilm = (urlCurrentFilm) => {
   let film = fetch(urlCurrentFilm)
     .then(response => response.json())
@@ -20,39 +16,39 @@ const grabCurrFilm = (results) => {
   }
 }
 
-export const findPeople = (url, state) => {
-
-
-  let peoples = 
+export const searchCharacter=(url)=>{
+  let people =
     fetch(`${url}people`)
-      .then(response => response.json())
-      .then(results => grabPeople(results))
-      // .then(peopleArr => setPeople(peopleArr, state))
-      // .then(peopleArr => console.log('last then',peopleArr));
-
-  console.log('this console',peoples)
-  return Promise.all([peoples]);
+      .then(response=> response.json())
+      .then(characters=> mapPeople(characters, url))
+      // .then(promise=> console.log("ppl", promise));
+  return people;
 }
 
-const grabPeople = (results) => {
-  // ** console.log('grabPeople', results.results)
-  // let people = [this.state.allCards.people];
-  let peopleArr = results.results.map((people) => {
-    // ** console.log(people)
-    return {
-      name: people.name,
-      // Todo: homeworld: people.homeworld,
-      // Todo: species: people.species,
-      // Todo: population: people.Population,
-      favorite: false
-    }
-  })
-  console.log('People: ', peopleArr);
-  return peopleArr;
+let mapPeople =(characters)=>{
+  let unresolvedPeoples = characters.results.map(char=>{
+    return Promise.all([findHomeWorld(char), findSpecies(char)])
+      .then(results=> ({
+        name: char.name,
+        species: results[1],
+        homeworld: results[0].name,
+        population: results[0].popu,
+        favorite: false,
+        id: Date.now()
+      }))
+  });
+  return Promise.all(unresolvedPeoples)
 }
 
-const setPeople = (peopleArr, state) => {
-  let tempState = state;
-  tempState.allCards.people.push(peopleArr);
-  return tempState;
+const findHomeWorld =(char)=>{
+  return fetch(char.homeworld)
+    .then(response=> response.json())
+    .then(homeworld=> 
+      char.homeworld = {name: homeworld.name, popu: homeworld.population})
+}
+
+const findSpecies =(char)=>{
+  return fetch(char.species)
+    .then(response=> response.json())
+    .then(species=> species.name)
 }

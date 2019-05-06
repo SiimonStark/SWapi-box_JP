@@ -1,0 +1,17 @@
+nav button {
+  margin: 0 35px;
+  color: $OGYellow;
+  background: rgba(black, .25);
+  border: $OGYellow 3px solid;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $OGYellow;
+    color: black;
+  }
+}
+
+.button--active {
+  background-color: $OGYellow;
+  color: black;
+}
