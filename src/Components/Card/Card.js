@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 const Card = (props) => {
   return (
-    <section className="card" >
+    <section className="Card" >
       <div className="fade"></div>
-      <h4>props.person</h4>
-      <p>content</p>
+      <article className="card__content">
+        <h4>props.person</h4>
+        <p>content</p>
+      </article>
     </section>
   )
 }

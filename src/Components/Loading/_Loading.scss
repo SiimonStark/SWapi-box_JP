@@ -1,0 +1,20 @@
+.Loading {
+  .fade {
+    top: 0;
+  }
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+.loader {
+  position: absolute;
+  z-index: 3;
+
+  img {
+    position: absolute;
+    left: 25%;
+  }
+}
